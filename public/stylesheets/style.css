@@ -1,0 +1,67 @@
+body {
+  font-family:  sans-serif;
+  background-image: url(../images/fondoo.jpg);
+}
+
+a {
+  color: #00b7ff;
+}
+
+h1 {
+  color: 15px;
+}
+
+.navbar {
+    margin-bottom: 40px;
+}  
+.imagenPerfil{
+  width: 30%;
+}
+
+#myMap { 
+  background-color: blue;
+  height: 450px;
+}
+
+
+.imagenEvento {
+  width: 50%;
+}
+
+.imageList {
+  width:100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: top;
+  
+}
+
+.card{
+  margin-bottom: 40px;
+}
+.background{
+  background-image: url(../images/fondo.jpg);
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient();
+}
+.home {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hijo {
+ 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cardback {
+  background-color: transparent;
+}

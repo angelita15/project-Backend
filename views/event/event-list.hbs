@@ -1,0 +1,79 @@
+{{!-- <h1>soy la lista</h1>
+<div class="container">
+  <div class="row">
+    {{#each eventos}}
+
+    <div class="col-md-4">
+      <p class="fs-3"> Nombre: {{name}} </p>
+      <p class="fs-3"> Fecha: {{date}} </p>
+      <p class="fs-3"> Direccion: {{address.street.streetName}} </p>
+      <p class="fs-3"> Ciudad: {{address.city}} </p>
+
+      <div class="d-flex">
+        <a href="/eventos/editar/{{_id}}" class="btn btn-outline-dark">Editar</a>
+        <form action="/eventos/{{_id}}/delete" method="POST">
+          <button type="submit" class="btn btn-outline-danger">Borrar lugar</button>
+        </form>
+        <a href="/eventos/detalles/{{_id}}" class="btn btn-outline-dark">detalles</a>
+      </div>
+    </div>
+  </div>
+
+  {{/each}}
+</div>
+</div> --}}
+
+{{!-- <div class="container">
+  <div class="row">
+
+
+    <div class="col-md-4">
+      <img class="imageList" src="{{image}}" alt="imagen evento">
+      <p class="fs-5"> Nombre: {{name}} </p>
+      <p class="fs-5"> Fecha: {{date}} </p>
+      <p class="fs-5"> Direccion: {{address.street.streetName}} </p>
+      <p class="fs-5"> Ciudad: {{address.city}} </p>
+
+      <div class="d-flex">
+        <a href="/eventos/editar/{{_id}}" class="btn btn-outline-dark">Editar</a>
+        <form action="/eventos/{{_id}}/delete" method="POST">
+          <button type="submit" class="btn btn-outline-danger">Borrar lugar</button>
+        </form>
+        <a href="/eventos/detalles/{{_id}}" class="btn btn-outline-dark">detalles</a>
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+</div> --}}
+
+<div class="container">
+  <div class="row">
+
+    {{#each eventos}}
+
+    <div class="col-md-4">
+      <div class="card cardback"  style="width: 18rem;">
+        <img src="{{image}}" alt="imagen evento" class="card-img-top imageList">
+        <div class="card-body">
+          <h5 class="card-title">Nombre: {{name}}</h5>
+          <p class="card-text">Fecha: {{date}}</p>
+          <p class="card-text">Dirección: {{address.street.streetName}}</p>
+          <p class="card-text">Ciudad: {{address.city}}</p>
+          <div class="d-flex">
+            <a href="/eventos/detalles/{{_id}}" class="btn btn-outline-dark">Detalles</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+
+
+
+
+  </div>
+</div>

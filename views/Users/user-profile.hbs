@@ -1,0 +1,28 @@
+<div class="container">
+
+    <h1>Hola {{user.username}}</h1>
+
+    <p>Mi email: {{user.email}}</p>
+    <p>Imagen de perfil</p>
+    <img class='imagenPerfil' src="{{user.image}}" alt="imagen de perfil">
+
+    {{#if isPartner}}
+    <p>Tipo de espacio: {{user.category}}</p>
+    <p>Espacio web: {{user.websiteUrl}}</p>
+    {{/if}}
+    <br>
+    {{#if isOwner}}
+    {{#if isUser }}
+    <a class='btn btn-outline-dark' href="/perfil-usuario/editar/{{user._id}}">Editar perfil</a>
+    <a class='btn btn-outline-dark' href="/mis-eventos">Mis eventos</a>
+    {{/if}}
+    {{/if}}
+
+    {{#if isOwner}}
+    {{#if isPartner}}
+    <a class="btn btn-outline-dark" href="/colaboradores/perfil/editar/{{user._id}}">Editar perfil</a>
+    <a class="btn btn-outline-dark" href="/eventos/crear">Crear Evento</a>
+    <a class="btn btn-outline-dark" href="/eventos/mis-eventos">Mis eventos</a>
+    {{/if}}
+    {{/if}}
+</div>

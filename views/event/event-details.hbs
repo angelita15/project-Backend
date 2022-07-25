@@ -1,0 +1,87 @@
+<div class="container">
+
+    <div class="row justify-content-center ">
+
+        <div class="col-md-6 ">
+            <br>
+            <h1> Detalles del evento</h1>
+
+            <h5> Nombre: {{evento.name}} </h5>
+            <br>
+            <h5> Fecha: {{evento.date}} </h5>
+            <br>
+            <h5> Direccion: {{evento.address.street.streetName}} </h5>
+            <br>
+            <h5> Ciudad: {{evento.address.city}} </h5>
+            <br>
+            <img class='imagenEvento' src="{{evento.image}}" alt="imagen del evento"></img>
+            <h5> descripcion {{evento.description}} </h5>
+            <br><br>
+
+
+
+            {{#if isPartner}}
+            {{#if isOwner}}
+            <a href="/eventos/editar/{{evento._id}}" class="btn btn-outline-danger d-grid gap-2 col-6">Editar</a>
+            <form action="/eventos/{{evento._id}}/delete" method="POST">
+                <button type="submit" class="btn btn-outline-dark d-grid gap-2 col-6">Borrar evento</button>
+            </form>
+            {{/if}}
+            {{/if}}
+        </div>
+
+
+        <hr>
+        <div class="col-md-6 ">
+            {{!-- //formulario comentarios --}}
+            <div class="mb-3">
+                <form action="/eventos/detalles/{{evento._id}}/comments" method="POST">
+                    <label for="exampleFormControlTextarea1" class="form-label">Deja tu comentario</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="text"></textarea>
+                    <button type="submit" class="btn btn-dark"> comentar </button>
+                </form>
+            </div>
+
+            {{#each comments}}
+
+            <p>{{this.text}}</p>
+
+            {{/each}}
+        </div>
+    </div>
+
+
+    {{!-- //formulario asistire --}}
+    {{!-- <div classs="mb-3">
+        <form action="/eventos/detalles/{{evento._id}}/participants" method="POST">
+            <button type="submit" class="btn btn-dark"> asistiré </button>
+        </form>
+
+    </div> --}}
+
+    <div>
+        <center>
+            <h3 id="counter-label">{{counter}}</h3>
+        </center>
+    </div>
+    <center>
+        <form action="/eventos/detalles/{{evento._id}}/participants" method="POST">
+            <button id='buttonClick' class="btn btn-dark"> ASISTIRE </button>
+
+        </form>
+    </center>
+    <br><br>
+
+
+    <div class="d-none">
+        <input value="{{evento.address.location.coordinates.[0]}}">
+        <input value="{{evento.address.location.coordinates.[1]}}">
+    </div>
+    <div>
+        <figure id="myMap">
+    </div>
+
+    </figure>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/events-map.js">  </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"></script>

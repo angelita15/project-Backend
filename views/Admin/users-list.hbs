@@ -1,0 +1,14 @@
+<div class="container">
+    <ul>
+        {{#each user}}
+        <li>{{username}}</li>
+        <p>{{role}}</p>
+        <a class="btn btn-outline-dark col-2" href="/perfil-usuario/{{_id}}">Ver perfil</a>
+        <form action="/admin/usuarios/delete/{{_id}}" method="POST">
+            <button type="submit" class="btn btn-outline-dark col-2">Borrar perfil</button>
+        </form>
+
+        <br><br>
+        {{/each}}
+    </ul>
+</div>
